@@ -1,0 +1,530 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> {% block title %}BOOKMARK - Index{% endblock title %} </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Tempo
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">BOOKMARK</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="{% static '/img/logo.png' %}" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="logout">Logout</a></li>
+            {% else %}
+          <li class="dropdown"><a href="#"><span>Get in to</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              </li>
+              <li><a href="signin">SIGN IN</a></li>
+              <li><a href="login">LOGIN</a></li>
+            </ul>
+            {% endif %}
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      
+      {% block content %}
+      {% for message in messages %}
+
+      <div class="alert alert-{{message.tags}} alert-dismissible fade show"
+      role="alert">
+       <strong>{{message}}</strong>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+      <h3>Welcome to <strong>BOOKMARK</strong></h3>
+      <h1>OPEN YOUR BOOK HERE</h1>
+      <h2 style="font-family: 'Monospace';">WE WILL SERVE YOU WITH AN ASTOUNDING EXPERIENCE OF READING AND RECOMMENDATION</h2>
+      <a href="inter/get_started" class="btn-get-started scrollto">Get Started</a>
+      {% endblock content %}
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <h3>Learn More <span>About Us</span></h3>
+          <p>Bookmark will serve you with astounding experience of reading and recommendation. </p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+             When one thrives to read, bookmark is here. Reading anything is easy but reading what your mind want is tough. You can choose what you want to read whether its rom-com, horror, thriller etc. When you are a novice reader, you need a domestic author's book rather than complicated linguistuc international author's. We provide the option to choose between it. We recommend the book according to your choice, read with your comfort.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Choose what genre book you prefer</li>
+              <li><i class="ri-check-double-line"></i> Domestic or international, what makes you thrilled?</li>
+              <li><i class="ri-check-double-line"></i> You can read the book at free of cost</li>
+              <li><i class="ri-check-double-line"></i> Reader can give rating and feeback about the books</li>
+              <li><i class="ri-check-double-line"></i> User can make suggestions about the services</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              When you start to read, you forget what the reality is. A reader always live more than one life, as they goes through millions feeling and existence. Is it a dream or life..?, Find here.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <h3>We do offer awesome <span>Services</span></h3>
+          <p>The reader need a choice,we provide it with cheers. Your priority is our responsibility</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-book" ></i></div>
+              <h4 class="title"><a href="">Book</a></h4>
+              <p class="description">The book you need,We provide indeed.You are in search of a specific genre,You are in the right place.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-book-reader"></i></div>
+              <h4 class="title"><a href="">Reading Book</a></h4>
+              <p class="description">You are recommended the best among the load of books.According to the suggestion you can read something that ace its genre.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-time"></i></div>
+              <h4 class="title"><a href="">Time</a></h4>
+              <p class="description">You can read anytime,anywhere.Time never stops you reading.You can take your own time to complete a book you are interested.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">International</a></h4>
+              <p class="description">When there is best selling novels all over the world,its easy to confuse which one to read first. We provide you International and domestic books in the option, So you can choose the best among the best.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+          <h1>Features</h1>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-6 col-6">
+            <div class="icon-box">
+              <i class="bx bx-book" style="color: #ffbb2c;"></i>
+              <h3><a href="">Variant Genres</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="icon-box">
+              <i class="bx bx-book-reader" style="color: #5578ff;"></i>
+              <h3><a href="">Variety Books</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #e80368;"></i>
+              <h3><a href="">Linguistic Classification</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="bx bx-pencil" style="color: #e361ff;"></i>
+              <h3><a href="">Veracious Recommendations</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-file-list-3-line" style="color: #47aeff;"></i>
+              <h3><a href="">Proper Services</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="bx bx-paper-plane" style="color: #ffa76e;"></i>
+              <h3><a href="">Optimization of Resources</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="bx bx-time" style="color: #11dbcf;"></i>
+              <h3><a href="">Time Efficient</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="bx bx-bookmark" style="color: #4233ff;"></i>
+              <h3><a href="">Easy to Access</a></h3>
+            </div>
+          </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <h3>Check our <span>Portfolio</span></h3>
+          <p>Count time in Pages,Count lives in Books.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-fiction">Fiction</li>
+              <li data-filter=".filter-horror">Horror</li>
+              <li data-filter=".filter-thriller">Thriller</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fiction">
+            <img src="{% static '/img/portfolio/kite runner2.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The kite Runner</h4>
+              <p>Fiction</p>
+              <a href="{% static '/img/portfolio/kite runner.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/TheKiteRunnerPDF_201905/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-horror">
+            <img src="{% static '/img/portfolio/dracula1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Dracula</h4>
+              <p>Horror</p>
+              <a href="{% static '/img/portfolio/dracula1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/dracula-bram-stoker/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-thriller">
+            <img src="{% static '/img/portfolio/girl1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The Girl on the Train</h4>
+              <p>Thriller</p>
+              <a href="{% static '/img/portfolio/girl1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/TheGirlOnTheTrain_201810/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fiction">
+            <img src="{% static '/img/portfolio/alchemist1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The Alchemist</h4>
+              <p>Fiction</p>
+              <a href="{% static '/img/portfolio/alchemist1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/paulo-coelho-the-alchemist/page/n5/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-horror">
+            <img src="{% static '/img/portfolio/asylum2.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Asylum</h4>
+              <p>Horror</p>
+              <a href="{% static '/img/portfolio/asylum2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" 
+              ><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/isbn_9780062220967/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-thriller">
+            <img src="{% static '/img/portfolio/silent1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The Silent Patient</h4>
+              <p>Thriller</p>
+              <a href="{% static '/img/portfolio/silent1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
+              <a href="https://pdfcoffee.com/qdownload/2019-the-silent-patient-by-alex-michaelides-celadon-books-pdf-free.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fiction">
+            <img src="{% static '/img/portfolio/the fault in our star1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The Fault in our Star</h4>
+              <p>Fiction</p>
+              <a href="{% static '/img/portfolio/the fault in our star1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/faultinourstars0000gree_d2s9/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-horror">
+            <img src="{% static '/img/portfolio/the exorcist.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The Exorcist</h4>
+              <p>Horror</p>
+              <a href="{% static '/img/portfolio/the exorcist.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
+              <a href="https://archive.org/details/exorci00blat/mode/2up?view=theater" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-thriller">
+            <img src="{% static '/img/portfolio/behind closed doors.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Behind Closed Doors</h4>
+              <p>Thriller</p>
+              <a href="{% static '/img/portfolio/behind closed doors.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
+              <a href="https://www.readanybook.com/online/725371" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>F.A.Q</h2>
+          <h3>Frequently Asked <span>Questions</span></h3>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">How to log in? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                For login,first you have to go index page then click on get in to and login using your email id and password
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">How to download Books? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+               To Download Books first you have to login,then using the link provided at book description you can download it 
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">where can i choose category? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                login >> home >> select genre >> select Nationality >>Download
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">How to connect us? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+               using the email id or phone number that we provide at the end of the page you can connect us
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">How can i read Review? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                you can read the review and add review just below each books
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Does the user can have the option to add Books? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                sorry,currently we are not providing such an option to directly upload any book from users.if you have any good options you can contact us through email id
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3>Contact <span>Us</span></h3>
+          <p>Thank you for your interest in contacting us.You can send us a message using the contact form below'or email.</p>
+        </div>
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9965762497086!2d75.88629736162413!3d11.136279441378512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba651d1ff78a761%3A0xbecb73aedde745b6!2z4LS44LWG4LSo4LWN4LSx4LSw4LWN4oCNIOC0q-C1i-C0sOC1jeKAjSDgtJXgtK7gtY3gtKrgtY3gtK_gtYLgtJ_gtY3gtJ_gtbwg4LS44LSv4LW74LS44LWNICYg4LSH4LSo4LWN4oCN4LSr4LWL4LSw4LWN4oCN4LSu4LWH4LS34LSo4LWN4oCNIOC0n-C1huC0leC1jeC0qOC1i-C0s-C0nOC0vw!5e1!3m2!1sml!2sin!4v1699164969287!5m2!1sml!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>CCSIT CU CAMPUS,THENIPALAM</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>bookmark@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>9876543210</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="contact" method="POST" class="email-form">{% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="number" class="form-control" name="mobnumber" id="mobnumber" placeholder="Your Mobile Number" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          
+          
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static '/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static '/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static '/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static '/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static '/js/main.js' %}"></script>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block title %}Login page{% endblock title %}
+{% block content %}
+
+<div class="border">
+  {% for message in messages %}
+
+<div class="alert alert-{{message.tags}} alert-dismissible fade show"
+role="alert">
+ <strong>{{message}}</strong>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<form action="login" method="POST" >{% csrf_token %}
+<br>
+<h3 class="text-light">LOG IN</h3>
+<label for="email" class="text-light">Email</label>
+<div class="form-group">
+  <input type="Email" class="form-control" id="email" name="email" required>
+
+</div>
+<label for="pass1"  class="text-light">Password</label>
+<div class="form-group">
+<input type="password" class="form-control" id="pass1" name="pass1" required>
+</div>
+<br>
+<button type="submit" class="btn btn-dark text-light" >LOG IN</button>
+<br>
+<label class="text-light"> Are You a New User?<a href="signin">Signup</a></label>
+<br>
+</form>
+</div>
+</div>
+
+{% endblock content %}

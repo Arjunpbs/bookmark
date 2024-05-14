@@ -1,0 +1,85 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interior html page</title>
+    <link href="{% static 'apple-touch-icon.png/.jpg' %}" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+    <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <h1 class="logo"><a href="index.html">BOOKMARK</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="{% static '/img/logo.png' %}" alt="" class="img-fluid"></a>-->
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="index">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="logout">Logout</a></li>
+              {% else %}
+            <li class="dropdown"><a href="#"><span>Get in to</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                </li>
+                <li><a href="signin">SIGN IN</a></li>
+                <li><a href="login">LOGIN</a></li>
+              </ul>
+              {% endif %}
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+  
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="hero-container">
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert">
+         <strong>{{message}}</strong>
+        </div>
+        <!--
+        <button class="btn">Horror</button>
+        <button class="btn">Fiction</button>
+        <button class="btn">Biography</button>
+        <button class="btn">Fantasy</button>
+        <button class="btn">Romance</button>
+        -->
+        <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-link" data-mdb-ripple-color="dark">Link</button>
+      </div>
+    </section><!-- End Hero -->
+
+</body>
+
+</html>
+
